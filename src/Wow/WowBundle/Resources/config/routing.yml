@@ -18,4 +18,16 @@ startpage:
     pattern:  /start
     defaults: { _controller: WowWowBundle:Start:index }
 
+cabinetpage:
+    pattern:  /cabinet
+    defaults: { _controller: WowWowBundle:Cabinet:index }
+
+changespage:
+    pattern:  /changes
+    defaults: { _controller: WowWowBundle:Changes:index }
+
+registrationpage:
+    pattern:  /registration
+    defaults: { _controller: WowWowBundle:Registration:index }
+
 

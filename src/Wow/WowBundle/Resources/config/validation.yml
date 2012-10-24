@@ -1,0 +1,13 @@
+Wow\WowBundle\Entity\Registration:
+    properties:
+        login:
+            - NotBlank: ~
+        pwd:
+            - NotBlank: { groups: [registration] }
+            - MinLength: { limit: 7, groups: [registration] }
+        pwd2:
+            - NotBlank: { groups: [registration] }
+            - MinLength: { limit: 7, groups: [registration] }
+        email:
+            - NotBlank: ~
+            - Email: ~

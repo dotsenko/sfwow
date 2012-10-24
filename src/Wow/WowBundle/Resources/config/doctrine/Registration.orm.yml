@@ -1,0 +1,25 @@
+Wow\WowBundle\Entity\Registration:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    world:
+      type: string
+      length: '255'
+    login:
+      type: string
+      length: '255'
+    pwd:
+      type: string
+      length: '255'
+    pwd2:
+      type: string
+      length: '255'
+    email:
+      type: string
+      length: '255'
+  lifecycleCallbacks: {  }

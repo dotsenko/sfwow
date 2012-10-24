@@ -1,0 +1,20 @@
+{% extends'::base.html.twig' %}
+
+{% block body %}
+     <div id="title"><img src="/images/changes.png" alt=""/></div>
+            <div id="content">
+                <div class="box">
+                    Изменения на мирах:
+                    <ul>
+                       {% for change in changes %}
+                            {% if loop.last  %}
+                                <li><a href="{{ change.url }}">{{ change.title }}</a></li>
+                            {% else %}
+                                <li><a href="{{ change.url }}">{{ change.url }}</a> - {{ change.title }}</li>
+                            {% endif %}
+                       {% endfor %}
+                        </br>
+                    </ul>
+                </div>
+            </div>       
+{% endblock %}

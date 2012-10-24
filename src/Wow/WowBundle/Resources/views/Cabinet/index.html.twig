@@ -1,0 +1,15 @@
+{% extends'::base.html.twig' %}
+
+{% block body %}
+     <div id="title"><img src="/images/cp.png" alt=""/></div>
+            <div id="content">
+                <div class="box">
+                    Адреса входа в Личный Кабинет:
+                    <ul>
+                    {% for cabinet in cabinets %}
+                        <li><a href="{{ cabinet.url }}">{{ cabinet.url }}</a> - {{ cabinet.title }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>     
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends'::base.html.twig' %}
+
+{% block body %}
+    <div id="title"><img src="/images/reg.png" alt=""/></div>
+        <div id="content">
+          	<form action="{{ path('registrationpage')}}" method="post" {{ form_enctype(form) }} novalidate>
+                <div class="row">
+                    <label for="Account_server">Игровой мир:</label>
+                    {{ form_widget(form.world) }}
+          	    </div>
+               
+                <div class="row">
+                    <label for="Account_username">Логин:</label>   {{ form_widget(form.login) }}
+                    <span class="error">{{ form_errors(form.login) }}</span>
+                </div>
+                		
+                <div class="row">
+                    <label for="Account_sha_pass_hash">Пароль:</label> {{ form_widget(form.pwd) }}
+                     <span class="error"> {{ form_errors(form.pwd) }}</span>
+                </div>
+                
+                <div class="row">
+                    <label for="Account_password2">Повторить пароль:</label> {{ form_widget(form.pwd2) }}
+                    <span class="error">  {{ form_errors(form.pwd2) }}</span>
+                </div>
+
+                <div class="row">
+                    <label for="Account_email">Адрес E-mail:</label> {{ form_widget(form.email) }}
+                     <span class="error"> {{ form_errors(form.email) }}</span>
+                </div>
+                		
+
+                    
+                <div class="row">
+                        Регистрируясь, Вы принимаете
+                        <a href="/main/rules.html">условия</a>
+                        системы автоматически.
+                </div>
+                     
+                <div class="row">
+                    <input type="submit" name="yt0" value="Регистрация" />
+                </div>
+                  {% if mesg %}
+      		  <div class="row" style="color:red">
+        	{{ mesg }}
+        </div>
+        {% endif %}
+         {{ form_rest(form) }}
+            </form> 
+        </div>  
+      
+
+{% endblock %}
