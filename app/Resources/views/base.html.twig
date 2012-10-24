@@ -1,0 +1,56 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Symfony Wow Circle</title>
+<meta name="description" content="Бесплатный сервер игры World of Warcraft: WoW Circle. Для игры на серверах необходим клиент версии от 3.3.5a до 4.3.0. Обновления и исправления каждый день. Ежедневный онлайн свыше 40000 человек." />
+<meta name="keywords" content="сервер wow, бесплатный сервер wow, World Of Warcraft, Cataclysm, 4.0.6, 3.3.5, реалм Катаклизма, Cataclysm, 4.3.0" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="main">
+
+    <div id="container">
+        <div id="mh"></div>
+        <div id="header"></div>
+
+        <div id="left_column">
+            {% render "WowWowBundle:Left:menu" %}
+        </div>
+        
+        <div id="right_column">
+           {% render "WowWowBundle:Articles:recentArticles" with {'max': 3} %}
+        </div>
+        
+        <div id="center">
+            {% block body %}
+                <!--Text -->
+            {% endblock %}
+        </div>
+
+        <div id="bottom"></div>
+        <div id="logo"></div>
+    </div>
+    
+</div>
+
+
+<div id="footer">
+    <div id="counters">
+        &copy; Все права защищены. sfwow.int 2012</br>
+        <!--LiveInternet counter--><script type="text/javascript"><!--
+        document.write("<a href='http://www.liveinternet.ru/click' "+
+        "target=_blank><img src='//counter.yadro.ru/hit?t26.6;r"+
+        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+        screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+        ";"+Math.random()+
+        "' alt='' title='LiveInternet: показано число посетителей за"+
+        " сегодня' "+
+        "border='0' width='88' height='15'><\/a>")
+        //--></script><!--/LiveInternet-->
+    </div>
+</div>
+</body>
+</html>

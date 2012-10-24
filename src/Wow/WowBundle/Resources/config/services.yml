@@ -1,0 +1,7 @@
+parameters:
+#    wow_wow.example.class: Wow\WowBundle\Example
+
+services:
+#    wow_wow.example:
+#        class: %wow_wow.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

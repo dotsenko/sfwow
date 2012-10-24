@@ -1,0 +1,12 @@
+{% extends'::base.html.twig' %}
+
+{% block body %}
+   <div id="title"><img src="/images/start.png" alt=""/></div>
+            <div id="content">
+                <div class="box">
+                    {% for page in pages%}
+                    {{ page.text | raw }}
+                    {% endfor %}
+                </div>
+            </div>      
+{% endblock %}

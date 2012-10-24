@@ -1,0 +1,19 @@
+Wow\WowBundle\Entity\Pages:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    title:
+      type: string
+      length: '255'
+    url:
+      type: string
+      length: '255'
+    text:
+      type: text
+      length: null
+  lifecycleCallbacks: {  }

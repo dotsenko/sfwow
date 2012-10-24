@@ -1,0 +1,22 @@
+Wow\WowBundle\Entity\News:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    title:
+      type: string
+      length: '255'
+    date:
+      type: date
+      length: null
+    description:
+      type: text
+      length: null
+    image:
+      type: string
+      length: '255'
+  lifecycleCallbacks: {  }

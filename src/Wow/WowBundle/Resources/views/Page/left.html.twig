@@ -1,0 +1,25 @@
+            <ul id="menu">
+                {% for menu in menus%}
+                    <li><a href="{{ path( menu.url ) }}">{{ menu.title }}</a></li>
+                {% endfor %}
+                <li><a href="http://forum.wowcircle.com/" target="_blank">Форум</a></li>
+                <li><a href="/main/reg.html">Регистрация</a></li>
+                <li><a href="/main/start.html">Как подключиться</a></li>
+                <li><a href="/main/stat.html">Общий онлайн: 28546</a></li>
+                <!-- <li><a href="/main/stat.html">Статистика</a></li> -->
+                <li><a href="/main/cp.html">Личный кабинет</a></li>
+                <li><a href="/main/changes.html">Список изменений</a></li>
+                <li><a href="http://forum.wowcircle.com/showthread.php?t=105372" target="_blank">О проекте</a></li>
+                <li><a href="/main/tournament.html">PvP Турнир</a></li>
+                <li class="end"></li>
+            </ul>
+            <ul id="forum">
+                <li><a href="http://forum.wowcircle.com/forumdisplay.php?104" target="_blank">Главный раздел форума</a></li>
+                <li><a href="http://forum.wowcircle.com/forumdisplay.php?f=109" target="_blank">Информация, новости</a></li>
+                <li><a href="http://forum.wowcircle.com/forumdisplay.php?123" target="_blank">Правила</a></li>
+                <li><a href="http://forum.wowcircle.com/forumdisplay.php?7" target="_blank">Разделы игровых миров</a></li>
+                <li><a href="http://forum.wowcircle.com/forumdisplay.php?6" target="_blank">Все об игре</a></li>
+                <li><a href="http://forum.wowcircle.com/forumdisplay.php?13" target="_blank">Баг-трекер</a></li>
+                <li><a href="http://forum.wowcircle.com/forumdisplay.php?101" target="_blank">Флудильня</a></li>
+                <li class="end"></li>
+            </ul>

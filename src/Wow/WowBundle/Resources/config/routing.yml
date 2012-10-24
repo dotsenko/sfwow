@@ -1,0 +1,21 @@
+WowWowBundle_homepage:
+    pattern:  /
+    defaults: { _controller: WowWowBundle:Default:index }
+
+WowWowBundle_newspage:
+    pattern:  /news
+    defaults: { _controller: WowWowBundle:News:index }
+
+WowWowBundle_articlespage:
+    pattern:  /articles
+    defaults: { _controller: WowWowBundle:Articles:index }
+
+show_articlespage:
+    pattern:  /articles/show/{id}
+    defaults: { _controller: WowWowBundle:Articles:show }
+
+startpage:
+    pattern:  /start
+    defaults: { _controller: WowWowBundle:Start:index }
+
+

@@ -1,0 +1,19 @@
+{% extends'::base.html.twig' %}
+
+{% block body %}
+    <div id="title"><img src="/images/index.png" alt=""/></div>
+    <div id="content">
+        <div class="box">
+            {% for page in pages%}
+                {{ page.text | raw }}
+            {% endfor %}
+        </div>
+       {% for new in news %}
+        <div class="box">
+            <img src="{{ asset('images/') }}{{ new.image }}" alt="{{ new.title }}" title="{{ new.title }}"/>
+            <div class="date">{{ new.date | date("m-d-Y") }}<span> {{ new.title }}</span></div>
+            {{ new.description }}                   
+        </div>
+        {% endfor %}
+    </div>  
+{% endblock %}

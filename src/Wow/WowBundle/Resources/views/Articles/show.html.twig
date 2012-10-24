@@ -1,0 +1,14 @@
+{% extends'::base.html.twig' %}
+
+{% block body %}
+	<div id="title"><img src="/images/article.png" alt=""/></div>
+        <div id="content">
+        	<div class="box">
+                <h2>{{ article.title }}</h2>
+                <p class="hl">{{ article.shortdesc }}</p>
+                <p>Добавлена: {{ article.date | date('m-d-Y') }}</p>
+                <p>{{ article.description | raw }}    
+				Автор {{ article.author }}</p>
+            </div>
+        </div>    
+{% endblock %}

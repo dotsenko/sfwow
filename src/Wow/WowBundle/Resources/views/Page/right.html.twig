@@ -1,0 +1,37 @@
+<div id="auth">
+    <div id="form">
+        <select id="logon" name="logon">
+            <option value="http://cp.wowcircle.com/">logon</option>
+            <option value="http://cp2.wowcircle.com/">logon2</option>
+            <option value="http://cp3.wowcircle.com/">logon3</option>
+            <option value="http://cp4.wowcircle.com/">logon4</option>
+        </select>
+        <div id="auth_panel">
+            <input type="image" onclick="location.href=document.getElementById('logon').value" id="auth_button" src="/images/auth_button.png" />
+            <a href="/main/reg.html" id="auth_reg">регистрация</a>
+            <a href="http://cp.wowcircle.com/reminder.htm" target="_blank" id="auth_pass">забыли пароль?</a>
+        </div>
+    </div>
+</div>
+
+<ul class="column_right_menu">
+    <li><a href="http://ru.wowhead.com/" target="_blank">Русская БД WoW</a></li>
+    <li><a href="http://www.curse.com/addons/wow" target="_blank">Аддоны для WoW</a></li>
+</ul>
+
+<ul id="btn">
+    <li><a href="http://vkontakte.ru/wow_circle_com" target="_blank"><img src="/images/btn_vk.png" alt="Группа WoWCircle вконтакте"/></a></li>
+    <li><a href="http://www.facebook.com/wowcircle" target="_blank"><img src="/images/btn_fb.png" alt="Группа WoWCircle на фейсбук"/></a></li>
+    <li><a href="http://twitter.com/WoW_Circle" target="_blank"><img src="/images/btn_tw.png" alt="WoWCircle в твиттере"/></a></li>
+    <li><a href="http://www.youtube.com/user/n0n4m3nsk" target="_blank"><img src="/images/btn_yt.png" alt="Канал WoWCircle на ютубе"/></a></li>
+</ul>
+
+<ul id="article">
+    {% for article in articles %}
+        <li>
+            <a href="{{ path('show_articlespage', {'id': article.id}) }}">
+            <span>{{article.date | date('d-m-Y') }}</span> | <span>{{ article.title}}</span>
+            </a> {{ article.shortdesc }}<a class="read" href="{{ path('show_articlespage', {'id': article.id}) }}">читать полностью...</a>
+        </li>
+    {% endfor %}
+</ul>            
