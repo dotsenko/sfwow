@@ -18,10 +18,10 @@ class RegistrationController extends Controller
    		$data = $request->request->get('registration');
    		if ($request->getMethod() == 'POST') {
 	        $form->bindRequest($request);
-
+         
         	if ($form->isValid()) {
-	        
-	            $registration->setWorld($data['world']);
+	          
+                $registration->setWorld($data['world']);
 	            $registration->setLogin($data['login']);
 	            $registration->setPwd($data['pwd']);
 	            $registration->setPwd2($data['pwd2']);
@@ -30,17 +30,23 @@ class RegistrationController extends Controller
 	    		$em = $this->getDoctrine()->getEntityManager();
     			$em->persist($registration);
     			$em->flush();
-    		}
-    		return $this->render('WowWowBundle:Registration:index.html.twig', array(
+    		
+        		return $this->render('WowWowBundle:Registration:index.html.twig', array(
+                'form' => $form->createView(),
+                'mesg' => 'Спасибо',
+                 ));
+               
+            }
+             $message = $this->get('translator')->trans('getters.passwordLegal.message', array(), 'validation');
+var_dump($message);
+            return $this->render('WowWowBundle:Registration:index.html.twig', array(
             'form' => $form->createView(),
-            'mesg' => 'Спасибо',
-        ));
-	    }else{
-
-        return $this->render('WowWowBundle:Registration:index.html.twig', array(
+            'mesg' => $message,
+            ));
+	  	}
+         return $this->render('WowWowBundle:Registration:index.html.twig', array(
             'form' => $form->createView(),
             'mesg' => '',
-        ));
-    	}
+            ));
     }
 }

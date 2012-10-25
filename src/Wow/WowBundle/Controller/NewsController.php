@@ -10,9 +10,15 @@ class NewsController extends Controller
     
     public function indexAction()
     {
-    	$news = $this->getDoctrine()
-        ->getRepository('WowWowBundle:News')
-        ->findAll();
+    	$em = $this->getDoctrine()->getEntityManager();
+        $qb = $em->createQueryBuilder();
+        $qb->select('n')
+            ->from('Wow\WowBundle\Entity\News', 'n')
+            ->orderBy('n.date', 'DESC')
+        ;    
+
+        $query = $qb->getQuery();
+        $news = $query->getResult();
         return $this->render('WowWowBundle:News:index.html.twig', array(
         	'news' => $news,
         ));

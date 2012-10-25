@@ -321,6 +321,7 @@ h1{
 }
 
 #content .box {
+    min-height: 80px;
     text-indent: 20px;
     background: url(/images/br.png) no-repeat bottom center;
     padding-bottom: 10px;

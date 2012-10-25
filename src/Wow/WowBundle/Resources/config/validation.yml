@@ -3,11 +3,15 @@ Wow\WowBundle\Entity\Registration:
         login:
             - NotBlank: ~
         pwd:
-            - NotBlank: { groups: [registration] }
-            - MinLength: { limit: 7, groups: [registration] }
+            - NotBlank: ~
+            - MinLength:  7
         pwd2:
-            - NotBlank: { groups: [registration] }
-            - MinLength: { limit: 7, groups: [registration] }
+            - NotBlank: ~
+            - MinLength: 7
+          
         email:
             - NotBlank: ~
             - Email: ~
+    getters:
+        passwordLegal:
+            - "True": { message: "The password cannot match your first name" }

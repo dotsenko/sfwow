@@ -39,6 +39,10 @@ class Registration
      */
     private $email;
 
+    public function isPasswordLegal()
+    {
+       return($this->pwd == $this->pwd2);
+    }
 
     /**
      * Get id

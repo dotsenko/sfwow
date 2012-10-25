@@ -1,7 +1,18 @@
 parameters:
 #    wow_wow.example.class: Wow\WowBundle\Example
 
-services:
+#services:
 #    wow_wow.example:
 #        class: %wow_wow.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+services:
+    wow.wow.admin.news:
+        class: Wow\WowBundle\Admin\NewsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Сайт, label: Новости }
+        arguments: [null, Wow\WowBundle\Entity\News, WowWowBundle:NewsAdmin]
+    wow.wow.admin.registration:
+        class: Wow\WowBundle\Admin\RegistrationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Сайт, label: Регистрация пользователя }
+        arguments: [null, Wow\WowBundle\Entity\Registration, WowWowBundle:RegistrationAdmin]
