@@ -37,11 +37,10 @@ class RegistrationController extends Controller
                  ));
                
             }
-             $message = $this->get('translator')->trans('getters.passwordLegal.message', array(), 'validation');
-var_dump($message);
+            
             return $this->render('WowWowBundle:Registration:index.html.twig', array(
             'form' => $form->createView(),
-            'mesg' => $message,
+            'mesg' => '',
             ));
 	  	}
          return $this->render('WowWowBundle:Registration:index.html.twig', array(

@@ -4,6 +4,8 @@ namespace Wow\WowBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Wow\WowBundle\Entity\Registration
  */
@@ -16,29 +18,46 @@ class Registration
 
     /**
      * @var string $world
+     * 
      */
     private $world;
 
     /**
-     * @var string $login
+     * 
+     *@ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank()
+     * @Assert\MinLength(limit="5")
+     * @Assert\MaxLength(limit="255")
      */
     private $login;
 
     /**
      * @var string $pwd
+     * @Assert\NotBlank()
+     * @Assert\MinLength(limit="5")
+     * @Assert\MaxLength(limit="255")
      */
     private $pwd;
 
     /**
      * @var string $pwd2
+     * @Assert\NotBlank()
+     * @Assert\MinLength(limit="5")
+     * @Assert\MaxLength(limit="255")
      */
     private $pwd2;
 
     /**
      * @var string $email
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
+    /**
+    * @Assert\True(message = "Passwords are not the same")
+    */
     public function isPasswordLegal()
     {
        return($this->pwd == $this->pwd2);
