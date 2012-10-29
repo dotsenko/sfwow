@@ -29,8 +29,11 @@
                      <span class="error"> {{ form_errors(form.email) }}</span>
                 </div>
                 		
+                 <div class="row">
+                    <label for="Account_captch">Код проверки:</label> <br/> {{ form_widget(form.captcha) }}
+                     <span class="error"> {{ form_errors(form.captcha) }}</span>
+                </div>
 
-                    
                 <div class="row">
                         Регистрируясь, Вы принимаете
                         <a href="/main/rules.html">условия</a>

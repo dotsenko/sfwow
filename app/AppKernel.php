@@ -24,6 +24,7 @@ class AppKernel extends Kernel
         new Sonata\BlockBundle\SonataBlockBundle(),
         new Sonata\CacheBundle\SonataCacheBundle(),
             new Wow\WowBundle\WowWowBundle(),
+        new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

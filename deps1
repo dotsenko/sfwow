@@ -97,3 +97,8 @@
 [Exporter]
      git=git://github.com/sonata-project/exporter.git
      target=/exporter
+     
+[GregwarCaptchaBundle]
+    git=http://github.com/Gregwar/CaptchaBundle.git
+    target=/bundles/Gregwar/CaptchaBundle
+    version=origin/2.0

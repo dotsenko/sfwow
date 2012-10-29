@@ -21,6 +21,7 @@ class RegistrationType extends AbstractType
         $builder->add('pwd','password');
         $builder->add('pwd2','password');
         $builder->add('email','email');
+        $builder->add('captcha', 'captcha',array('invalid_message'=>'Неправильный код проверки'));
     }
 
     public function getName()

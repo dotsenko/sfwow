@@ -1,5 +1,9 @@
-.error {
+#registration_captcha{
+    margin-left: 60px;
+}
+.error li{
     color: red;
+    list-style: none !important;
 }
 * {
     margin: 0px;

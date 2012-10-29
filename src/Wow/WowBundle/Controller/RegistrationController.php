@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Wow\WowBundle\Form\RegistrationType;
 use Wow\WowBundle\Entity\Registration;
 use Symfony\Component\HttpFoundation\Response;
-
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormError;
 class RegistrationController extends Controller
 {
     
@@ -16,12 +17,13 @@ class RegistrationController extends Controller
       	$registration = new Registration();
    		$form = $this->createForm(new RegistrationType(), $registration);
    		$data = $request->request->get('registration');
+
    		if ($request->getMethod() == 'POST') {
 	        $form->bindRequest($request);
          
         	if ($form->isValid()) {
 	          
-                $registration->setWorld($data['world']);
+              $registration->setWorld($data['world']);
 	            $registration->setLogin($data['login']);
 	            $registration->setPwd($data['pwd']);
 	            $registration->setPwd2($data['pwd2']);
@@ -37,7 +39,11 @@ class RegistrationController extends Controller
                  ));
                
             }
-            
+            if($data['pwd'] != $data['pwd2']){
+              $form->get('pwd')->addError(new FormError('Пароли не совпадают'));
+              $form->get('pwd2')->addError(new FormError('Пароли не совпадают'));
+            }
+          
             return $this->render('WowWowBundle:Registration:index.html.twig', array(
             'form' => $form->createView(),
             'mesg' => '',

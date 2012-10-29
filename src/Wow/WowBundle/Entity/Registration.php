@@ -56,11 +56,11 @@ class Registration
     private $email;
 
     /**
-    * @Assert\True(message = "Пароли не одинаковы")
+    * @Assert\False(message = "Пароли не одинаковы")
     */
     public function isPasswordLegal()
     {
-       return($this->pwd != $this->pwd2);
+        return($this->pwd != $this->pwd2);
     }
 
     /**
