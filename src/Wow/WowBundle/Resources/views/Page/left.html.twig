@@ -1,4 +1,8 @@
+
             <ul id="menu">
+              {% if home != '/' and home != '/app_dev.php/' %}
+                <a onclick="javascript:history.back();">Назад</a>
+              {% endif %}
                 {% for menu in menus%}
                     <li><a href="{{ path( menu.url ) }}">{{ menu.title }}</a></li>
                 {% endfor %}

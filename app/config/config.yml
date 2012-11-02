@@ -58,7 +58,7 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
-    
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -71,5 +71,21 @@ sonata_block:
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
-        
+
 gregwar_captcha: ~
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Wow\UserBundle\Entity\User
+    registration:
+        form:
+            type: wow_user_registration
+
+services:
+    wow_user.registration.form.type:
+        class: Wow\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: wow_user_registration }
+

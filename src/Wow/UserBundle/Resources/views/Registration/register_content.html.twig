@@ -1,0 +1,49 @@
+{% form_theme form theme %}
+ <div id="title"><img src="/images/reg.png" alt=""/></div>
+        <div id="content">
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" novalidate>
+
+
+                <div class="row">
+                    <label for="Account_server">Игровой мир:</label>   {{ form_widget(form.world) }}
+                    <span class="error">{{ form_errors(form.world) }}</span>
+          	    </div>
+
+                <div class="row">
+                    <label for="Account_username">Логин:</label>   {{ form_widget(form.username) }}
+                    <span class="error">{{ form_errors(form.username) }}</span>
+                </div>
+
+                <div class="row">
+                    <label for="Account_sha_pass_hash">Пароль:</label> {{ form_widget(form.plainPassword.first) }}
+                     <span class="error"> {{ form_errors(form.plainPassword) }}</span>
+                </div>
+
+                <div class="row">
+                    <label for="Account_password2">Повторить пароль:</label> {{ form_widget(form.plainPassword.second) }}
+                    <span class="error">  {{ form_errors(form.plainPassword) }}</span>
+               </div>
+
+                <div class="row">
+                    <label for="Account_email">Адрес E-mail:</label> {{ form_widget(form.email) }}
+                     <span class="error"> {{ form_errors(form.email) }}</span>
+                </div>
+
+                 <div class="row">
+                    <label for="Account_captch">Код проверки:</label> <br/> {{ form_widget(form.captcha) }}
+                     <span class="error"> {{ form_errors(form.captcha) }}</span>
+                </div>
+
+                <div class="row">
+                        Регистрируясь, Вы принимаете
+                        <a href="/main/rules.html">условия</a>
+                        системы автоматически.
+                </div>
+
+                <div class="row">
+                    <input type="submit" name="yt0" value="Регистрация" />
+                </div>
+                  
+         {{ form_rest(form) }}
+            </form> 
+        </div>  

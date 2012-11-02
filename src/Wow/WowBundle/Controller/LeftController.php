@@ -13,8 +13,12 @@ class LeftController extends Controller
         $menus = $this->getDoctrine()
         ->getRepository('WowWowBundle:Menu')
         ->findAll();
+
+
         return $this->render('WowWowBundle:Page:left.html.twig', array(
         	'menus' => $menus,
+            'home'  => $_SERVER['REQUEST_URI'],
+
         ));
     }
 }
